@@ -1,68 +1,93 @@
-# Source code of Recognizing Emotions evoked by Movies using Multitask Learning. (The Code Follows MIT License) #
-To read the paper: Hassan Hayat, Carles Ventura, Agata Lapedriza, “Recognizing Emotions evoked by Movies using Multitask Learning”, International Conference on Affective Computing & Intelligent Interaction (ACII 2021)
+  # Recognizing Emotions Evoked by Movies Using Multitask Learning  
+*(Licensed under the MIT License)*
 
-This package was developed by Mr.Hassan Hayat (hhassan0@uoc.edu). Please feel free to contact in case of any query regarding the package. You can run this package at your own risk. This package is free for academic use.
+For details on the associated research, please refer to the paper:  
+**Hassan Hayat, Carles Ventura, Agata Lapedriza, “Recognizing Emotions Evoked by Movies Using Multitask Learning”**  
+*International Conference on Affective Computing & Intelligent Interaction (ACII 2021)*
 
-**Operating System** 
+This package was developed by Mr. Hassan Hayat (hhassan0@uoc.edu). For any inquiries regarding this package, please feel free to contact him. The package is provided free for academic use and is distributed at your own risk.
 
-- Ubuntu Linux
+---
 
-**Requirements**
+## Operating System
 
-- Python 3.x.x
+- **Ubuntu Linux**
 
-- GPU with CUDA support
+---
 
-- Visual features [I3D Model](https://github.com/deepmind/kinetics-i3d)
+## Requirements
 
-- Tensorflow 1.14
+- **Python:** 3.x.x  
+- **GPU:** With CUDA support  
+- **Visual Features:** [I3D Model](https://github.com/deepmind/kinetics-i3d)  
+- **TensorFlow:** 1.14
 
-**Dataset**
+---
 
-- Dataset [COGNIMUSE](http://cognimuse.cs.ntua.gr/database) 
+## Dataset
 
-## Movie clips creation and visual feature extraction information 
-**How to create movie clips of the COGNIMUSE dataset?**
+- **COGNIMUSE Dataset:** [Access Here](http://cognimuse.cs.ntua.gr/database)
 
-The subtitle information of movies is provided with the timestamps. These timestamps represent the starting and ending frame information in which the subtitle appears. We used these timestamps to create clips.
+---
 
-**How to get the visual features?**
+## Movie Clips Creation and Visual Feature Extraction
 
-We used an I3D model to get the visual features. The output of the ‘Mixed-5c’ layer of the model presents the visual representation of the given frame. Each frame was transformed into 224x224 sizes before feeding into the model.
+### Movie Clips Creation
 
-## Setup
-**Single-Task Learning**
+The COGNIMUSE dataset provides subtitle information along with timestamps, which indicate the starting and ending frames during which each subtitle appears. These timestamps are used to create corresponding movie clips.
 
-**Single-Task (ST) Learning using Single-Modality**
+### Visual Feature Extraction
 
-*train, validate, and test the single-task learning using only text modality*
+An I3D model is utilized to extract visual features from the movie clips. Specifically, the output from the **'Mixed-5c'** layer serves as the visual representation of each frame. Prior to input into the model, each frame is resized to **224x224** pixels.
 
-- ./text_modality/st_main.py
+---
 
-*train, validate, and test the single-task learning using only visual modality*
+## Setup Instructions
 
-- ./visual_modality/st_main.py
+### Single-Task Learning
 
-**Single-Task (ST) Learning using Multi-Modality**
+#### Single-Modality
 
-*train, validate, and test the single-task learning using text+visual modalities*
+- **Text Modality:**  
+  To train, validate, and test using only the text modality, execute:  
+  ```bash
+  ./text_modality/st_main.py
+  ```
 
-- ./multi_modality/st_main.py
+- **Visual Modality:**  
+  To train, validate, and test using only the visual modality, execute:  
+  ```bash
+  ./visual_modality/st_main.py
+  ```
 
-**Multi-Task Learning**
+#### Multi-Modality
 
-**Multi-Task (MT) Learning using Single-Modality**
+- **Text + Visual Modalities:**  
+  To train, validate, and test using both text and visual modalities, execute:  
+  ```bash
+  ./multi_modality/st_main.py
+  ```
 
-*train, validate, and test the multi-task learning using only text modality*
+### Multi-Task Learning
 
-- ./text_modality/mt_main.py
+#### Single-Modality
 
-*train, validate, and test the multi-task learning using only visual modality*
+- **Text Modality:**  
+  To train, validate, and test using only the text modality in a multi-task setting, execute:  
+  ```bash
+  ./text_modality/mt_main.py
+  ```
 
-- ./visual_modality/mt_main.py
+- **Visual Modality:**  
+  To train, validate, and test using only the visual modality in a multi-task setting, execute:  
+  ```bash
+  ./visual_modality/mt_main.py
+  ```
 
-**Multi-Task (MT) Learning using Multi-Modality**
+#### Multi-Modality
 
-*train, validate, and test the multi-task learning using text+visual modalities*
-
-- ./multi_modality/mt_main.py
+- **Text + Visual Modalities:**  
+  To train, validate, and test using both text and visual modalities in a multi-task setting, execute:  
+  ```bash
+  ./multi_modality/mt_main.py
+  ```
